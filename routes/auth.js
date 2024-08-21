@@ -18,6 +18,7 @@ router.post('/register', async (req, res) => {
         await newUser.save();
         return res.status(201).json(newUser);
     } catch (err) {
+        console.log(err.message)
        return  res.status(500).json({message: "Something Went Wrong"});
     }
 });
